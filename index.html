@@ -20,7 +20,22 @@
     <p id="intro">Hi! I'm Gabe Eaton, a Computer Science student passionate about coding and web development.</p>
     <button onclick="changeTextColor()">Change Text Color</button>
 
-    <script src="./script.js"></script>
+    <!-- User Data Form -->
+    <h2>Enter Your Details</h2>
+    <form id="userForm">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+        <br>
+        <label for="age">Age</label>
+        <input id="age" type="number" placeholder="Enter your age" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Results Display -->
+    <h3 id="resultMessage"></h3>
+
+    <script src="./proj2.js"></script>
 </body>
 
 </html>

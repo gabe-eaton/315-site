@@ -46,22 +46,24 @@ button:hover {
     background-color: #c0392b;
 }
 
-.red {
-    color: red;
+form {
+    text-align: center;
+    margin: 20px;
 }
 
-#yellow {
-    color: orange;
+form label {
+    font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-    h1, h2 {
-        font-size: 18px;
-    }
-    p {
-        padding: 5px;
-    }
+form input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+#resultMessage {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
 }
