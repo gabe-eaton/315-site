@@ -1,8 +1,8 @@
-// REQUIREMENT #1: Overlay Functionality
 document.addEventListener("DOMContentLoaded", function () {
     const mainImage = document.getElementById("mainImage");
     const overlay = document.getElementById("overlay");
     const overlayImg = document.getElementById("overlayImage");
+    const closeOverlay = document.getElementById("closeOverlay");
 
     // Swap image on click
     mainImage.addEventListener("click", function () {
@@ -10,18 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.style.display = "flex";
     });
 
-    // Close overlay
+    // Close overlay when 'X' button is clicked
+    closeOverlay.addEventListener("click", function () {
+        overlay.style.display = "none";
+    });
+
+    // Close overlay if clicked outside the image
     overlay.addEventListener("click", function (e) {
         if (e.target === overlay) {
             overlay.style.display = "none";
         }
     });
-
-    // REQUIREMENT #3: Node Manipulation
-    const projectsList = document.querySelector("ul");
-    const newProject = document.createElement("li");
-    newProject.innerHTML = "<strong>New Project:</strong> Added dynamically with JavaScript!";
-    projectsList.appendChild(newProject);
 
     // Form handling
     document.getElementById("userForm").addEventListener("submit", function (e) {
