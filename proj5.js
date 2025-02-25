@@ -4,21 +4,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlayImg = document.getElementById("overlayImage");
     const closeOverlay = document.getElementById("closeOverlay");
 
+    // Make sure the overlay, close button, and other elements are properly identified
+    if (!mainImage || !overlay || !overlayImg || !closeOverlay) {
+        console.error("One or more elements are missing!");
+        return; // Exit if any element is missing
+    }
+
     // Swap image on click
     mainImage.addEventListener("click", function () {
         overlayImg.src = "pfp_compressed.jpg"; // Different image
-        overlay.style.display = "flex";
+        overlay.style.display = "flex";  // Show overlay
     });
 
     // Close overlay when 'X' button is clicked
     closeOverlay.addEventListener("click", function () {
-        overlay.style.display = "none";
+        console.log("Close button clicked");  // For debugging
+        overlay.style.display = "none"; // Hide the overlay
     });
 
     // Close overlay if clicked outside the image
     overlay.addEventListener("click", function (e) {
         if (e.target === overlay) {
-            overlay.style.display = "none";
+            console.log("Overlay clicked outside the image");  // For debugging
+            overlay.style.display = "none"; // Hide the overlay
         }
     });
 
