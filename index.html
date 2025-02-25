@@ -18,7 +18,16 @@
 
     <h1>Welcome to My Portfolio</h1>
     <p id="intro">Hi! I'm Gabe Eaton, a Computer Science student passionate about coding and web development.</p>
-    <button onclick="changeTextColor()">Change Text Color</button>
+    
+    <div class="image-container">
+        <img id="mainImage" src="pfp_compressed.jpg" alt="Gabe Eaton" class="clickable-image">
+    </div>
+
+    <div id="overlay" class="overlay">
+        <span id="closeOverlay" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; cursor: pointer;">&times;</span>
+        <img id="overlayImage" src="pfp.jpg" alt="Gabe Eaton - Alternate">
+    </div>
+    
 
     <!-- User Data Form -->
     <h2>Enter Your Details</h2>
@@ -35,7 +44,7 @@
     <!-- Results Display -->
     <h3 id="resultMessage"></h3>
 
-    <script src="./proj3.js"></script>
+    <script src="./proj5.js"></script>
 </body>
 
 </html>
