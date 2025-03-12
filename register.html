@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>User Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 7 - Form Selections</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .selections-container {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #eee;
+            min-height: 50px;
+            border-radius: 5px;
+        }
+        .selection-item {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+        }
+        .remove-btn {
+            margin-left: 5px;
+            cursor: pointer;
+            color: red;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .file-preview {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            max-height: 300px;
+            overflow: auto;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Navigation -->
+    <h1>Form Selections Demo</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -17,69 +64,73 @@
         <a href="register.html">Register</a>
     </nav>
 
-    <h2>User Registration</h2>
     
-    <form id="registrationForm">
-        <!-- Full Name -->
-        <div class="form-group">
-            <label for="fullName">Full Name:</label>
-            <input type="text" name="fullName" placeholder="Enter your full name (letters only)" required>
-            <span class="hint">Letters and spaces only</span>
+    <!-- Section 1: Checkboxes and Text Input -->
+    <div class="form-section">
+        <h2>Add Items to Collection</h2>
+        
+        <div>
+            <h3>Add from Predefined Options:</h3>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="option" value="Apple"> Apple</label>
+                <label><input type="checkbox" name="option" value="Banana"> Banana</label>
+                <label><input type="checkbox" name="option" value="Orange"> Orange</label>
+                <label><input type="checkbox" name="option" value="Grapes"> Grapes</label>
+                <label><input type="checkbox" name="option" value="Mango"> Mango</label>
+            </div>
+            <button id="addCheckedBtn">Add Selected Items</button>
         </div>
         
-        <!-- Username -->
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" name="username" placeholder="Choose a username (6-15 characters)" required>
-            <span class="hint">6-15 characters, letters and numbers only, must start with a letter</span>
+        <div style="margin-top: 20px;">
+            <h3>Add Custom Item:</h3>
+            <input type="text" id="customItem" placeholder="Enter a custom item">
+            <button id="addCustomBtn">Add Item</button>
         </div>
         
-        <!-- Email -->
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <span class="hint">Format: user@example.com</span>
+        <h3>Your Selections:</h3>
+        <div id="selectionsContainer" class="selections-container">
+            <!-- Selected items will appear here -->
         </div>
         
-        <!-- Password -->
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="Create a password" required>
-            <span class="hint">8-20 characters with at least 1 uppercase, 1 lowercase, 1 number, and 1 special character (!@#$%^&*)</span>
+        <button id="clearAllBtn" style="margin-top: 10px;">Clear All Selections</button>
+    </div>
+    
+    <!-- Section 2: Regular Expression Validation -->
+    <div class="form-section">
+        <h2>Contact Information (with RegEx Validation)</h2>
+        
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+            <div id="phoneError" class="error">Please enter a valid 10-digit phone number</div>
+            <p><small>Format: 10 digits, any separators allowed (e.g., 1234567890, 123-456-7890, (123) 456-7890)</small></p>
         </div>
         
-        <!-- Confirm Password -->
-        <div class="form-group">
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
-            <span class="hint">Must match your password exactly</span>
+        <div style="margin-top: 15px;">
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" placeholder="Enter your email address">
+            <div id="emailError" class="error">Please enter a valid email address</div>
         </div>
         
-        <!-- Phone Number -->
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" name="phone" placeholder="Enter your phone number (123-456-7890)" required>
-            <span class="hint">Format: 123-456-7890</span>
+        <button id="validateBtn" style="margin-top: 15px;">Validate Information</button>
+        <div id="validationResult" style="margin-top: 10px;"></div>
+    </div>
+    
+    <!-- Section 3: File Upload -->
+    <div class="form-section">
+        <h2>File Upload and Display</h2>
+        
+        <div>
+            <label for="fileUpload">Select a text file:</label>
+            <input type="file" id="fileUpload" accept=".txt,.md,.csv,.json">
         </div>
         
-        <!-- Date of Birth -->
-        <div class="form-group">
-            <label for="dob">Date of Birth:</label>
-            <input type="date" name="dob" required>
-            <span class="hint">You must be at least 18 years old</span>
+        <div id="filePreview" class="file-preview" style="display: none;">
+            <h3>File Contents:</h3>
+            <pre id="fileContents"></pre>
         </div>
-        
-        <!-- Terms and Conditions -->
-        <div class="form-group checkbox-group">
-            <input type="checkbox" name="terms" id="terms" required>
-            <label for="terms">I agree to the terms and conditions</label>
-        </div>
-        
-        <!-- Submit Button -->
-        <button type="submit">Register</button>
-    </form>
-
-    <script src="./proj6.js"></script>
+    </div>
+    
+    <script src="proj7.js"></script>
 </body>
-
 </html>
