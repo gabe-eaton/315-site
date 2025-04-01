@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Customizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Page Customizer</h1>
+        <p>Customize the appearance of this page. Your preferences will be saved for future visits.</p>
+        
+        <form id="customizationForm">
+            <div class="form-group">
+                <label for="bgColor">Background Color:</label>
+                <select id="bgColor" name="bgColor">
+                    <option value="white">White</option>
+                    <option value="lightblue">Light Blue</option>
+                    <option value="lightgreen">Light Green</option>
+                    <option value="lightyellow">Light Yellow</option>
+                    <option value="lightpink">Light Pink</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="textColor">Text Color:</label>
+                <select id="textColor" name="textColor">
+                    <option value="black">Black</option>
+                    <option value="darkblue">Dark Blue</option>
+                    <option value="darkgreen">Dark Green</option>
+                    <option value="darkred">Dark Red</option>
+                    <option value="purple">Purple</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize" name="fontSize">
+                    <option value="14px">Small (14px)</option>
+                    <option value="16px">Medium (16px)</option>
+                    <option value="18px">Large (18px)</option>
+                    <option value="20px">X-Large (20px)</option>
+                </select>
+            </div>
+            
+            <button type="submit">Apply Settings</button>
+        </form>
+        
+        <div id="status"></div>
+    </div>
+    
+    <script src="proj9.js"></script>
+</body>
+</html>
