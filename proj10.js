@@ -1,11 +1,3 @@
-/**
- * Math Equation Puzzle Game
- * Drag and drop puzzle game with timer functionality
- * 
- * This script handles the game logic for a drag-and-drop math equation puzzle.
- * Players must arrange pieces to form the equation: 3 + 4 × 5 - 2 = 21
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     // Puzzle pieces data - each piece has an id, display value, and correct position
     const puzzlePieces = [
