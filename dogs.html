@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>External API Data Demo</h1>
+    </header>
+
+    <main>
+        <section id="dog-section">
+            <h2>Random Dog Images (Fetch API)</h2>
+            <div class="controls">
+                <button id="fetch-dog">Get New Dog</button>
+            </div>
+            <div id="dog-container" class="data-container">
+                <p>Click the button to fetch a random dog image!</p>
+            </div>
+            <div id="dog-error" class="error-message"></div>
+        </section>
+
+        <section id="user-section">
+            <h2>User Data (XMLHttpRequest)</h2>
+            <div class="controls">
+                <label for="user-id">Enter User ID (1-10):</label>
+                <input type="number" id="user-id" min="1" max="10" value="1">
+                <button id="fetch-user">Get User</button>
+            </div>
+            <div id="user-container" class="data-container">
+                <p>Enter a user ID and click the button to fetch user data.</p>
+            </div>
+            <div id="user-error" class="error-message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>APIs used: <a href="https://dog.ceo/dog-api/" target="_blank">The Dog API</a> and <a href="https://jsonplaceholder.typicode.com/" target="_blank">JSONPlaceholder</a></p>
+    </footer>
+
+    <script src="proj11.js"></script>
+</body>
+</html>
